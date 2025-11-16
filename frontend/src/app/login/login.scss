@@ -1,0 +1,36 @@
+.login-card {
+    width: 400px;
+    backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0.8);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s;
+  }
+  
+  .login-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  }
+  
+  .custom-input {
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid #d7d7d7;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s;
+  }
+  
+  .custom-input:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 4px rgba(13, 110, 253, 0.3);
+  }
+  
+  .custom-btn {
+    font-size: 16px;
+    letter-spacing: 0.3px;
+    transition: background-color 0.2s ease-in-out, transform 0.1s;
+  }
+  
+  .custom-btn:hover {
+    background-color: #0b5ed7;
+    transform: translateY(-2px);
+  }
+  
+  

@@ -1,0 +1,57 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm py-3">
+  <div class="container">
+
+    <!-- Brand / Website Name -->
+    <a class="navbar-brand fw-bold brand-text d-flex align-items-center">
+      ApplyGrid
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"
+      aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+        <li class="nav-item" *ngIf="role === 'JOB_SEEKER'">
+          <a class="nav-link nav-item-text" routerLink="/home/jobs">All Jobs</a>
+        </li>
+
+        <li class="nav-item" *ngIf="role === 'EMPLOYER'">
+          <a class="nav-link nav-item-text" routerLink="/home/post-job">Post Job</a>
+        </li>
+
+        <li class="nav-item" *ngIf="role === 'JOB_SEEKER'">
+          <a class="nav-link nav-item-text" routerLink="/home/dashboard">My Applications</a>
+        </li>
+
+        <li class="nav-item" *ngIf="role === 'EMPLOYER'">
+          <a class="nav-link nav-item-text" routerLink="/home/applicants">Applicants</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link text-warning fw-bold logout-text" (click)="logout()">Logout</a>
+        </li>
+
+        <!-- Profile Section -->
+        <li class="nav-item d-flex align-items-center ms-3">
+          <div class="profile-icon">
+            <i class="bi bi-person-circle fs-3 text-white"></i>
+          </div>
+
+          <div class="d-flex flex-column text-white lh-1 ms-2">
+            <span class="fw-semibold profile-name">{{ username }}</span>
+            <small class="role-text mt-1">{{ role }}</small>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+
+  </div>
+</nav>
+
+<div class="container mt-4">
+  <router-outlet></router-outlet>
+</div>

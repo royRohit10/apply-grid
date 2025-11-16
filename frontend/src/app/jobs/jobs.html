@@ -1,0 +1,47 @@
+<div class="row latest-jobs">
+
+  <div class="col-12 mb-3">
+    <h3 class="section-title">Latest Jobs</h3>
+    <p class="section-sub">Handpicked roles tailored for your skills</p>
+  </div>
+
+  <div *ngFor="let job of jobList" class="col-md-6 mb-4">
+    <div class="job-card shadow-sm">
+
+      <!-- Title + Company -->
+      <div class="job-header">
+        <h5 class="job-title">{{job.title}}</h5>
+        <p class="job-company">
+          <i class="bi bi-building me-1"></i>
+          {{job.company}}
+        </p>
+      </div>
+
+      <!-- Location + Salary -->
+      <div class="job-meta">
+        <span class="meta-pill">
+          <i class="bi bi-geo-alt-fill me-1"></i> {{job.location}}
+        </span>
+        <span class="meta-pill salary-pill">
+          <i class="bi bi-cash-coin me-1"></i> ₹{{job.salary}}
+        </span>
+      </div>
+
+      <!-- Description -->
+      <p class="job-desc">{{job.description}}</p>
+
+      <!-- Buttons -->
+      <div class="job-footer d-flex justify-content-end">
+        <button 
+          class="btn btn-primary btn-sm apply-btn"
+          (click)="apply(job.id)"
+          [disabled]="loadingJobId === job.id">
+          <i *ngIf="loadingJobId !== job.id" class="bi bi-send-fill me-1"></i>
+          {{ loadingJobId === job.id ? 'Applying...' : 'Apply Now' }}
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+</div>

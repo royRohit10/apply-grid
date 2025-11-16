@@ -1,0 +1,29 @@
+<div class="applications-wrapper d-flex justify-content-center align-items-center min-vh-100">
+  <div class="applications-card p-4 rounded-4 shadow-sm">
+
+    <h3 class="fw-bold text-center mb-4 app-title-main">
+      My Applications
+    </h3>
+
+    <div *ngFor="let app of applications" class="app-item p-3 mb-3 rounded-4">
+      <div class="d-flex justify-content-between align-items-center">
+
+        <div>
+          <h5 class="fw-semibold app-title mb-1">{{ app.title }}</h5>
+          <div class="company-text mb-2">{{ app.company }}</div>
+
+          <span class="status-badge"
+            [ngClass]="{
+              'status-pending': app.status === 'PENDING',
+              'status-accepted': app.status === 'ACCEPTED',
+              'status-rejected': app.status === 'REJECTED'
+            }">
+            {{ app.status }}
+          </span>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>

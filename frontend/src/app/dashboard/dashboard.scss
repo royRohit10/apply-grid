@@ -1,0 +1,64 @@
+/* Main card */
+.applications-card {
+  background: #ffffff;
+  border: 1px solid #e6e6e6;
+  max-width: 600px;
+  width: 100%;
+  border-radius: 16px;
+}
+
+/* Main heading */
+.app-title-main {
+  font-size: 1.7rem;
+  color: #2a2a2a;
+  letter-spacing: 0.5px;
+}
+
+/* Each application item */
+.app-item {
+  border: 1px solid #e9e9e9;
+  background: #fafafa;
+  transition: 0.2s ease;
+}
+
+.app-item:hover {
+  background: #f2f6ff;
+  border-color: #cdd9ff;
+}
+
+/* Job title */
+.app-title {
+  color: #2d2d2d;
+  font-size: 1.05rem;
+}
+
+/* Company text */
+.company-text {
+  color: #6f6f6f;
+  font-size: 0.9rem;
+}
+
+/* Status badges */
+.status-badge {
+  font-size: 0.8rem;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+/* Status styles */
+.status-pending {
+  background: #fff6dd;
+  color: #c79a00;
+}
+
+.status-accepted {
+  background: #e6ffed;
+  color: #10893e;
+}
+
+.status-rejected {
+  background: #ffe8e8;
+  color: #c02222;
+}

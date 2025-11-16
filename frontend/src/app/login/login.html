@@ -1,0 +1,56 @@
+<div class="d-flex justify-content-center align-items-center min-vh-100 bg-light host">
+  <div class="card shadow-lg p-4 border-0 rounded-4 login-card">
+    <div class="text-center mb-4">
+      <h3 class="fw-bold text-primary">Welcome Back</h3>
+      <p class="text-muted mb-0">Login to continue</p>
+    </div>
+
+    <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+      <div class="mb-3">
+        <label class="form-label fw-semibold">Email</label>
+        <input
+          type="email"
+          class="form-control custom-input"
+          [(ngModel)]="user.username"
+          name="email"
+          placeholder="Enter your email"
+          required
+        />
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label fw-semibold">Password</label>
+        <input
+          type="password"
+          class="form-control custom-input"
+          [(ngModel)]="user.password"
+          name="password"
+          placeholder="Enter your password"
+          required
+        />
+      </div>
+
+      <div class="d-flex justify-content-between mb-3">
+        <div>
+          <input type="checkbox" id="remember" class="form-check-input me-1" />
+          <label for="remember" class="text-muted small">Remember me</label>
+        </div>
+      </div>
+
+      <button
+        class="btn btn-primary w-100 py-2 rounded-3 mt-2 custom-btn"
+        type="submit"
+        [disabled]="loginForm.invalid || isSubmitting"
+      >
+        Login
+      </button>
+    </form>
+
+    <div class="text-center mt-3">
+      <p class="text-muted small mb-0">
+        Don't have an account?
+        <a [routerLink]="['/register']" class="text-primary fw-semibold text-decoration-none">Register</a>
+      </p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,74 @@
+/* Brand styling */
+.brand-text {
+  font-size: 1.55rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  color: #ffffff !important;
+  font-family: 'Poppins', sans-serif;
+  margin-right: 20px;
+}
+
+/* Navigation item text */
+.nav-item-text {
+  font-size: 1.05rem;
+  font-weight: 500;
+  padding: 0 14px !important;
+  font-family: 'Inter', sans-serif;
+  transition: color 0.2s ease;
+  color: #f3f6ff !important;
+}
+
+/* Hover effect */
+.nav-item-text:hover {
+  color: #ffffff !important;
+  opacity: 0.9;
+}
+
+/* Logout button */
+.logout-text {
+  font-size: 1rem;
+  margin-left: 10px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  transition: 0.2s ease;
+}
+
+.logout-text:hover {
+  opacity: 0.85;
+}
+
+/* Profile Section */
+.profile-name {
+  font-size: 0.95rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+}
+
+.role-text {
+  font-size: 0.78rem;
+  opacity: 0.85;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Icon area */
+.profile-icon i {
+  font-size: 1.8rem;
+  color: #ffffff;
+  opacity: 0.9;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.profile-icon i:hover {
+  opacity: 1;
+}
+
+/* Smooth alignment for all navbar items */
+.nav-item {
+  display: flex;
+  align-items: center;
+}
+
+/* Slight spacing between elements */
+.nav-item + .nav-item {
+  margin-left: 6px;
+}

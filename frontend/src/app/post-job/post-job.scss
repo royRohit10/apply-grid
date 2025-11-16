@@ -1,0 +1,52 @@
+/* Wrapper background */
+.postjob-wrapper {
+  background: #f4f6fa;
+}
+
+/* Card animation */
+.postjob-card {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Input field styles */
+.stylish-input {
+  border-radius: 12px;
+  border: 1px solid #d0d7e2;
+  padding: 10px 14px;
+  transition: 0.2s;
+}
+
+.stylish-input:focus {
+  border-color: #4f73ff;
+  box-shadow: 0 0 0 3px rgba(79, 115, 255, 0.2);
+}
+
+/* Icons inside input */
+.input-icon {
+  position: absolute;
+  top: 38px;
+  left: 14px;
+  font-size: 1.1rem;
+  color: #6c757d;
+}
+
+/* Submit Button */
+.submit-btn {
+  background: #4f73ff;
+  border: none;
+  color: white;
+  font-weight: 600;
+  border-radius: 12px;
+  transition: 0.25s;
+}
+
+.submit-btn:hover {
+  background: #3e5fe0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(79, 115, 255, 0.3);
+}

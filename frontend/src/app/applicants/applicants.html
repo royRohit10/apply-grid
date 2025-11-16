@@ -1,0 +1,60 @@
+<div class="viewapp-wrapper d-flex justify-content-center align-items-center min-vh-100">
+  <div class="viewapp-card shadow-sm p-4 rounded-4 bg-white" style="max-width: 650px; width: 100%;">
+
+    <!-- Header -->
+    <div class="text-center mb-4">
+      <h2 class="fw-bold text-primary">Applicants</h2>
+      <p class="text-muted mb-0">Review and manage the candidates applying for your job postings</p>
+    </div>
+
+    <!-- Applicant List -->
+    <div *ngFor="let applicant of applicants" class="applicant-card border rounded-4 p-3 mb-3">
+
+      <div class="d-flex justify-content-between align-items-start">
+
+        <!-- Applicant Info -->
+        <div>
+          <h5 class="fw-semibold mb-1">{{ applicant.title }}</h5>
+          <p class="text-muted small mb-2">{{ applicant.seekerEmail }}</p>
+
+          <!-- Status Badge -->
+          <span *ngIf="applicant.status !== 'PENDING'"
+                class="badge status-badge px-3 py-2"
+                [ngClass]="{
+                  'bg-success-subtle text-success border border-success': applicant.status === 'ACCEPTED',
+                  'bg-danger-subtle text-danger border border-danger': applicant.status === 'REJECTED'
+                }">
+            {{ applicant.status }}
+          </span>
+        </div>
+
+        <!-- Buttons for Pending Status -->
+        <div *ngIf="applicant.status === 'PENDING'" class="d-flex gap-2">
+
+          <button 
+            class="btn btn-outline-success btn-sm px-3 rounded-pill"
+            (click)="accept(applicant.id)"
+            [disabled]="loadingAcceptId === applicant.id || loadingRejectId === applicant.id">
+            {{ loadingAcceptId === applicant.id ? 'Accepting...' : 'Accept' }}
+          </button>
+
+          <button 
+            class="btn btn-outline-danger btn-sm px-3 rounded-pill"
+            (click)="reject(applicant.id)"
+            [disabled]="loadingAcceptId === applicant.id || loadingRejectId === applicant.id">
+            {{ loadingRejectId === applicant.id ? 'Rejecting...' : 'Reject' }}
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- No Applicants -->
+    <div *ngIf="applicants.length === 0" class="text-center text-muted mt-3">
+      No applicants yet.
+    </div>
+
+  </div>
+</div>

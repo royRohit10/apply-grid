@@ -1,0 +1,77 @@
+/* Section title */
+.section-title {
+    font-weight: 700;
+    color: #0f172a;
+  }
+  
+  .section-sub {
+    margin-top: -6px;
+    color: #64748b;
+    font-size: 0.9rem;
+  }
+  
+  /* Job card */
+  .job-card {
+    padding: 1.4rem;
+    background: #ffffff;
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    border-radius: 12px;
+    transition: 0.2s ease;
+  }
+  
+  .job-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+  }
+  
+  /* Title & company */
+  .job-title {
+    margin: 0;
+    font-weight: 700;
+    color: #1e293b;
+  }
+  
+  .job-company {
+    margin: 2px 0 0;
+    font-size: 0.9rem;
+    color: #64748b;
+  }
+  
+  /* Meta pills */
+  .job-meta {
+    margin: 0.7rem 0 0.8rem;
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+  }
+  
+  .meta-pill {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(99, 102, 241, 0.08);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: #4f46e5;
+    font-weight: 500;
+  }
+  
+  .salary-pill {
+    background: rgba(16, 185, 129, 0.08);
+    color: #0f766e;
+  }
+  
+  /* Description */
+  .job-desc {
+    color: #475569;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Apply button */
+  .apply-btn {
+    padding: 6px 14px;
+    font-weight: 600;
+    border-radius: 8px;
+  }
+  

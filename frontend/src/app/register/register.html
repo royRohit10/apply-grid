@@ -1,0 +1,50 @@
+<form #registerForm="ngForm" (ngSubmit)="register(registerForm)" class="d-flex justify-content-center align-items-center min-vh-100 bg-light host">
+    <div class="card shadow-lg p-4 border-0 rounded-4 login-card">
+  
+      <div class="text-center mb-4">
+        <h3 class="fw-bold text-primary">Create Account</h3>
+        <p class="text-muted mb-0">Register to get started</p>
+      </div>
+  
+      <div class="mb-3">
+        <label class="form-label fw-semibold">Full Name</label>
+        <input type="text" class="form-control custom-input" [(ngModel)]="user.name" name="name" placeholder="Enter your name" required #nameField="ngModel"/>
+        <div class="text-danger small" *ngIf="nameField.invalid && nameField.touched">Name is required</div>
+      </div>
+  
+      <div class="mb-3">
+        <label class="form-label fw-semibold">Email</label>
+        <input type="email" class="form-control custom-input" [(ngModel)]="user.email" name="username" placeholder="Enter your email" required #emailField="ngModel"/>
+        <div class="text-danger small" *ngIf="emailField.invalid && emailField.touched">Valid email is required</div>
+      </div>
+  
+      <div class="mb-3">
+        <label class="form-label fw-semibold">Password</label>
+        <input type="password" class="form-control custom-input" [(ngModel)]="user.password" name="password" placeholder="Create a password" required #passwordField="ngModel"/>
+        <div class="text-danger small" *ngIf="passwordField.invalid && passwordField.touched">Password is required</div>
+      </div>
+  
+      <div class="mb-3">
+        <label class="form-label fw-semibold">Role</label>
+        <select class="form-control custom-input" [(ngModel)]="user.role" name="role" required #roleField="ngModel">
+          <option value="" disabled>Select role</option>
+          <option value="JOB_SEEKER">Job Seeker</option>
+          <option value="EMPLOYER">Employer</option>
+        </select>
+        <div class="text-danger small" *ngIf="roleField.invalid && roleField.touched">Role is required</div>
+      </div>
+  
+      <button class="btn btn-primary w-100 py-2 rounded-3 mt-2 custom-btn" [disabled]="registerForm.invalid || isSubmitting">
+        {{ isSubmitting ? 'Registering...' : 'Register' }}
+      </button>
+  
+      <div class="text-center mt-3">
+        <p class="text-muted small mb-0">
+          Already have an account?
+          <a [routerLink]="['/login']" class="text-primary fw-semibold text-decoration-none">Login</a>
+        </p>
+      </div>
+  
+    </div>
+  </form>
+  
